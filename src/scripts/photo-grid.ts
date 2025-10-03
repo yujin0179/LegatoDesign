@@ -77,8 +77,7 @@ export async function setupGallery() {
 		selector: '.glightbox',
 		openEffect: 'zoom',
 		closeEffect: 'fade',
-		width: 'auto',
-		height: 'auto',
+		closeOnOutsideClick: true,
 	});
 }
 

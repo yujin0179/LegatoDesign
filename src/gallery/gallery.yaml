@@ -6,85 +6,38 @@ collections:
   - id: street
     name: Street
 images:
-  - path: nature/nature-2.jpg
+  - path: featured/can.png
     meta:
-      title: Nature scene 2
-      description: Serene natural landscape capturing the essence of wilderness.
-      collections:
-        - nature
-    exif: {}
-  - path: nature/nature-3.jpg
-    meta:
-      title: Nature scene 3
-      description: Breathtaking natural vista showcasing environmental beauty.
+      title: Can Design
+      description: 3D product design rendering
       collections:
         - featured
-        - nature
     exif: {}
-  - path: nature/nature-5.jpg
+  - path: featured/lemon2.jpg
     meta:
-      title: Nature scene 5
-      description: Natural landscape showing the raw beauty of the environment.
-      collections:
-        - nature
-    exif: {}
-  - path: nature/nature-7.jpg
-    meta:
-      title: Nature scene 7
-      description: Stunning natural landscape capturing environmental beauty.
+      title: Lemon Product
+      description: 3D product visualization
       collections:
         - featured
-        - nature
     exif: {}
-  - path: nature/nature-8.jpg
+  - path: featured/perfume3.jpg
     meta:
-      title: Nature scene 8
-      description: Beautiful natural vista showcasing environmental wonder.
-      collections:
-        - nature
-    exif: {}
-  - path: nature/L1002174.jpg
-    meta:
-      title: Travel scene 6
-      description: null
+      title: Perfume Bottle
+      description: Elegant perfume bottle design
       collections:
         - featured
-        - nature
-    exif:
-      captureDate: 2025-03-27T10:35:21.000Z
-      fNumber: 8
-      focalLength: 28
-      iso: 100
-      model: LEICA Q3
-      shutterSpeed: 1250
-      lensModel: SUMMILUX 1:1.7/28 ASPH.
-  - path: nature/nature-10.jpg
-    meta:
-      title: Nature scene 10
-      description: Majestic natural landscape displaying environmental splendor.
-      collections:
-        - nature
     exif: {}
-  - path: street/stree-1.jpg
+  - path: featured/bellafood.jpg
     meta:
-      title: Street photography 1
-      description: Urban scene capturing the essence of city life.
+      title: Bella Food
+      description: Food product packaging design
       collections:
         - featured
-        - street
     exif: {}
-  - path: travel/travel-1.jpg
+  - path: featured/sheem2.png
     meta:
-      title: Travel scene 1
-      description: Journey through remarkable destinations.
+      title: Sheem Product
+      description: Product design rendering
       collections:
         - featured
-        - travel
-    exif: {}
-  - path: nature/nature-1.jpg
-    meta:
-      title: Nature 1
-      description: ''
-      collections:
-        - nature
     exif: {}
