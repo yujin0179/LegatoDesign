@@ -8,9 +8,9 @@ export interface SocialLink {
 }
 
 export default {
-	title: 'SR',
+	title: 'Legato Design',
 	favicon: 'favicon.ico',
-	owner: 'Sara Richard',
+	owner: 'Legato Design',
 	profileImage: 'profile.webp',
 	socialLinks: [
 		{

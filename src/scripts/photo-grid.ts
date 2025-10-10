@@ -1,50 +1,7 @@
-import justifiedLayout from 'justified-layout';
 import GLightbox from 'glightbox';
 
-interface JustifiedLayoutResult {
-	/**
-	 * Height of the container containing the justified layout.
-	 */
-	containerHeight: number;
-	/**
-	 * Number of items that are in rows that aren't fully-packed.
-	 */
-	widowCount: number;
-	/**
-	 * Computed positional and sizing properties of a box in the justified layout.
-	 */
-	boxes: LayoutBox[];
-}
-
-/**
- * Computed positional and sizing properties of a box in the layout.
- */
-interface LayoutBox {
-	/**
-	 * Aspect ratio of the box.
-	 */
-	aspectRatio: number;
-	/**
-	 * Distance between the top side of the box and the top boundary of the justified layout.
-	 */
-	top: number;
-	/**
-	 * Width of the box in a justified layout.
-	 */
-	width: number;
-	/**
-	 * Height of the box in a justified layout.
-	 */
-	height: number;
-	/**
-	 * Distance between the left side of the box and the left boundary of the justified layout.
-	 */
-	left: number;
-	/**
-	 * Whether or not the aspect ratio was forced.
-	 */
-	forcedAspectRatio?: boolean;
-}
+const COLUMN_COUNT = 4;
+const GAP = 16; // gap in pixels
 
 export async function setupGallery() {
 	if (typeof document === 'undefined') return;
@@ -63,14 +20,10 @@ export async function setupGallery() {
 	}
 
 	// Wait for all images to load
-	const imageElements = await waitForImagesToLoad(container);
+	await waitForImagesToLoad(container);
 
-	// Get actual image dimensions after loading
-	const layout = createLayoutFor(imageElements, container);
-	console.log('Generated layout:', layout);
-
-	applyImagesStyleBasedOnLayout(imageLinks, layout);
-	applyContainerStyleBasedOnLayout(container, layout);
+	// Apply masonry layout
+	applyMasonryLayout(container, imageLinks);
 
 	// Initialize GLightbox
 	GLightbox({
@@ -81,22 +34,36 @@ export async function setupGallery() {
 	});
 }
 
-function createLayoutFor(
-	imageElements: HTMLImageElement[],
-	container: HTMLElement,
-): JustifiedLayoutResult {
-	const imageSizes = imageElements.map((img) => ({
-		width: img.naturalWidth || img.width || 300,
-		height: img.naturalHeight || img.height || 200,
-	}));
+function applyMasonryLayout(container: HTMLElement, imageLinks: HTMLElement[]) {
+	const containerWidth = container.clientWidth;
+	const columnWidth = (containerWidth - GAP * (COLUMN_COUNT - 1)) / COLUMN_COUNT;
+	const columnHeights = new Array(COLUMN_COUNT).fill(0);
 
-	const layout = justifiedLayout(imageSizes, {
-		containerWidth: container.clientWidth || window.innerWidth,
-		targetRowHeight: 300,
-		boxSpacing: 10,
-		containerPadding: 0,
+	imageLinks.forEach((el) => {
+		const img = el.querySelector('img') as HTMLImageElement;
+		if (!img) return;
+
+		// Find shortest column
+		const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+
+		// Calculate image height based on aspect ratio
+		const aspectRatio = img.naturalHeight / img.naturalWidth;
+		const imageHeight = columnWidth * aspectRatio;
+
+		// Position the element
+		el.style.position = 'absolute';
+		el.style.left = `${shortestColumnIndex * (columnWidth + GAP)}px`;
+		el.style.top = `${columnHeights[shortestColumnIndex]}px`;
+		el.style.width = `${columnWidth}px`;
+		el.style.height = `${imageHeight}px`;
+
+		// Update column height
+		columnHeights[shortestColumnIndex] += imageHeight + GAP;
 	});
-	return layout;
+
+	// Set container height to tallest column
+	container.style.position = 'relative';
+	container.style.height = `${Math.max(...columnHeights)}px`;
 }
 
 async function waitForImagesToLoad(container: HTMLElement) {
@@ -116,27 +83,6 @@ async function waitForImagesToLoad(container: HTMLElement) {
 		),
 	);
 	return imageElements;
-}
-
-function applyImagesStyleBasedOnLayout(imageLinks: HTMLElement[], layout: JustifiedLayoutResult) {
-	imageLinks.forEach((el, i) => {
-		if (!layout.boxes[i]) return;
-		const { left, top, width, height } = layout.boxes[i];
-
-		el.style.position = 'absolute';
-		el.style.left = `${left}px`;
-		el.style.top = `${top}px`;
-		el.style.width = `${width}px`;
-		el.style.height = `${height}px`;
-		el.style.display = 'block';
-	});
-}
-
-function applyContainerStyleBasedOnLayout(container: HTMLElement, layout: JustifiedLayoutResult) {
-	// Ensure the parent container has relative positioning
-	container.style.position = 'relative';
-	// Set container height
-	container.style.height = `${layout.containerHeight}px`;
 }
 // Run setupGallery once the page is loaded
 if (typeof window !== 'undefined') {

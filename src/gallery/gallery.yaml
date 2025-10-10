@@ -1,10 +1,10 @@
 collections:
-  - id: nature
-    name: Nature
-  - id: travel
-    name: Travel
-  - id: street
-    name: Street
+  - id: product
+    name: Product
+  - id: interior
+    name: Interior
+  - id: mockup
+    name: Mockup
 images:
   - path: featured/can.png
     meta:
@@ -12,6 +12,7 @@ images:
       description: 3D product design rendering
       collections:
         - featured
+        - product
     exif: {}
   - path: featured/lemon2.jpg
     meta:
@@ -19,6 +20,7 @@ images:
       description: 3D product visualization
       collections:
         - featured
+        - product
     exif: {}
   - path: featured/perfume3.jpg
     meta:
@@ -26,6 +28,7 @@ images:
       description: Elegant perfume bottle design
       collections:
         - featured
+        - product
     exif: {}
   - path: featured/bellafood.jpg
     meta:
@@ -33,6 +36,7 @@ images:
       description: Food product packaging design
       collections:
         - featured
+        - product
     exif: {}
   - path: featured/sheem2.png
     meta:
@@ -40,4 +44,37 @@ images:
       description: Product design rendering
       collections:
         - featured
+        - product
+    exif: {}
+  - path: featured/chimhyang.jpg
+    meta:
+      title: Chimhyang
+      description: Product design
+      collections:
+        - featured
+        - product
+    exif: {}
+  - path: featured/drip.png
+    meta:
+      title: Drip Coffee
+      description: Product design
+      collections:
+        - featured
+        - product
+    exif: {}
+  - path: featured/dayiet1.jpg
+    meta:
+      title: Dayiet
+      description: Product design
+      collections:
+        - featured
+        - product
+    exif: {}
+  - path: featured/ginseng.jpg
+    meta:
+      title: Ginseng
+      description: Product design
+      collections:
+        - featured
+        - product
     exif: {}
