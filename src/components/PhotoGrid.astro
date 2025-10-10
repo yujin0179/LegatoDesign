@@ -6,12 +6,13 @@ import type { Image as ImageType } from '../data/galleryData';
 
 interface Props {
 	images: ImageType[];
+	columns?: number;
 }
 
-const { images } = Astro.props;
+const { images, columns = 4 } = Astro.props;
 ---
 
-<section id="photo-grid" class="relative w-full mx-auto overflow-hidden">
+<section id="photo-grid" class="relative w-full mx-auto overflow-hidden" data-columns={columns}>
 	{
 		images.map((image) => (
 			<a

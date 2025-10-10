@@ -1,6 +1,5 @@
 import GLightbox from 'glightbox';
 
-const COLUMN_COUNT = 4;
 const GAP = 16; // gap in pixels
 
 export async function setupGallery() {
@@ -22,8 +21,11 @@ export async function setupGallery() {
 	// Wait for all images to load
 	await waitForImagesToLoad(container);
 
+	// Get column count from data attribute
+	const columnCount = parseInt(container.getAttribute('data-columns') || '4');
+
 	// Apply masonry layout
-	applyMasonryLayout(container, imageLinks);
+	applyMasonryLayout(container, imageLinks, columnCount);
 
 	// Initialize GLightbox
 	GLightbox({
@@ -34,17 +36,17 @@ export async function setupGallery() {
 	});
 }
 
-function applyMasonryLayout(container: HTMLElement, imageLinks: HTMLElement[]) {
+function applyMasonryLayout(container: HTMLElement, imageLinks: HTMLElement[], columnCount: number) {
 	const containerWidth = container.clientWidth;
-	const columnWidth = (containerWidth - GAP * (COLUMN_COUNT - 1)) / COLUMN_COUNT;
-	const columnHeights = new Array(COLUMN_COUNT).fill(0);
+	const columnWidth = (containerWidth - GAP * (columnCount - 1)) / columnCount;
+	const columnHeights = new Array(columnCount).fill(0);
 
-	imageLinks.forEach((el) => {
+	imageLinks.forEach((el, index) => {
 		const img = el.querySelector('img') as HTMLImageElement;
 		if (!img) return;
 
-		// Find shortest column
-		const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+		// Place images left to right, then down (maintains gallery.yaml order)
+		const columnIndex = index % columnCount;
 
 		// Calculate image height based on aspect ratio
 		const aspectRatio = img.naturalHeight / img.naturalWidth;
@@ -52,13 +54,13 @@ function applyMasonryLayout(container: HTMLElement, imageLinks: HTMLElement[]) {
 
 		// Position the element
 		el.style.position = 'absolute';
-		el.style.left = `${shortestColumnIndex * (columnWidth + GAP)}px`;
-		el.style.top = `${columnHeights[shortestColumnIndex]}px`;
+		el.style.left = `${columnIndex * (columnWidth + GAP)}px`;
+		el.style.top = `${columnHeights[columnIndex]}px`;
 		el.style.width = `${columnWidth}px`;
 		el.style.height = `${imageHeight}px`;
 
 		// Update column height
-		columnHeights[shortestColumnIndex] += imageHeight + GAP;
+		columnHeights[columnIndex] += imageHeight + GAP;
 	});
 
 	// Set container height to tallest column
