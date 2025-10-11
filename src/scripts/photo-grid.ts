@@ -21,11 +21,11 @@ export async function setupGallery() {
 	// Wait for all images to load
 	await waitForImagesToLoad(container);
 
-	// Get column count from data attribute
-	const columnCount = parseInt(container.getAttribute('data-columns') || '4');
+	// Get column count from data attribute (max columns)
+	const maxColumns = parseInt(container.getAttribute('data-columns') || '4');
 
 	// Apply masonry layout
-	applyMasonryLayout(container, imageLinks, columnCount);
+	applyMasonryLayout(container, imageLinks, maxColumns);
 
 	// Initialize GLightbox
 	GLightbox({
@@ -36,8 +36,19 @@ export async function setupGallery() {
 	});
 }
 
-function applyMasonryLayout(container: HTMLElement, imageLinks: HTMLElement[], columnCount: number) {
+function applyMasonryLayout(container: HTMLElement, imageLinks: HTMLElement[], maxColumns: number) {
 	const containerWidth = container.clientWidth;
+
+	// Responsive column count based on screen width
+	let columnCount = maxColumns;
+	if (containerWidth < 640) {
+		columnCount = 1; // mobile
+	} else if (containerWidth < 768) {
+		columnCount = 2; // tablet
+	} else if (containerWidth < 1024) {
+		columnCount = Math.min(3, maxColumns); // small desktop
+	}
+
 	const columnWidth = (containerWidth - GAP * (columnCount - 1)) / columnCount;
 	const columnHeights = new Array(columnCount).fill(0);
 

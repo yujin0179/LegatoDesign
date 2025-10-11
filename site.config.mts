@@ -9,9 +9,9 @@ export interface SocialLink {
 
 export default {
 	title: 'Legato Design',
-	favicon: 'favicon.ico',
+	favicon: 'icon.ico',
 	owner: 'Legato Design',
-	profileImage: 'profile.webp',
+	profileImage: 'profile5.png',
 	socialLinks: [
 		{
 			name: 'GitHub',

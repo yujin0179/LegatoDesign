@@ -5,16 +5,16 @@ const title = siteConfig.title;
 
 const base = import.meta.env.BASE_URL;
 const menuItems = [
-	{ name: 'Home', link: `${base}` },
-	{ name: 'Works', link: `${base}/collections` },
+	{ name: 'Works', link: `${base}/collections/product` },
 	{ name: 'About', link: `${base}/about` },
+	{ name: 'Contact', link: `${base}/contact` },
 ];
 ---
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-	href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
 	rel="stylesheet"
 />
 
@@ -24,13 +24,13 @@ const menuItems = [
 	class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
 	:class="scrolled ? 'py-3 bg-white shadow-sm' : 'py-5 bg-transparent'"
 >
-	<div class="container mx-auto flex justify-between items-center">
-		<a href={base} id="logo" class="text-2xl md:text-4xl font-semibold tracking-tight">
+	<div class="container mx-auto px-3 sm:px-4 lg:px-6 flex justify-between items-center">
+		<a href={base} id="logo" class="text-2xl md:text-4xl font-semibold tracking-tight" style="font-family: 'Cormorant Garamond', serif;">
 			{title}
 		</a>
 
-		<!-- Desktop Menu -->
-		<div class="hidden md:flex space-x-8">
+		<!-- Desktop Menu (Center) -->
+		<div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8">
 			{
 				menuItems.map((item) => (
 					<a
@@ -42,6 +42,14 @@ const menuItems = [
 				))
 			}
 		</div>
+
+		<!-- Price Button (Desktop) -->
+		<a
+			href="#"
+			class="hidden md:block bg-black text-white font-bold px-6 py-2 rounded-full hover:bg-gray-800 transition-colors"
+		>
+			가격안내
+		</a>
 
 		<!-- Mobile Menu Button -->
 		<button @click="isOpen = !isOpen" class="md:hidden text-gray-800 focus:outline-none">

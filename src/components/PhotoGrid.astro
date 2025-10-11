@@ -27,6 +27,7 @@ const { images, columns = 4 } = Astro.props;
 					format="webp"
 					width={image.src.width}
 					height={image.src.height}
+					loading="lazy"
 					class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
 					alt={image.title}
 				/>

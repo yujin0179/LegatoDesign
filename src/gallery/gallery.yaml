@@ -195,3 +195,87 @@ images:
       collections:
         - product
     exif: {}
+  - path: product/CleansingOil-2.png
+    meta:
+      title: Cleansing Oil
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/Hyaluronic-1.jpeg
+    meta:
+      title: Hyaluronic
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/byeori.png
+    meta:
+      title: Byeori
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/yulbaekgo.jpg
+    meta:
+      title: Yulbaekgo
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/lemon3.png
+    meta:
+      title: Lemon 3
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/mask2.png
+    meta:
+      title: Mask
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/mia.png
+    meta:
+      title: Mia
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/olive1.png
+    meta:
+      title: Olive
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/olive2.png
+    meta:
+      title: Olive 2
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/tripleBalance.png
+    meta:
+      title: Triple Balance
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/grey.png
+    meta:
+      title: Grey
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/theSera.png
+    meta:
+      title: The Sera
+      description: Product design
+      collections:
+        - product
+    exif: {}
