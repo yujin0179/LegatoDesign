@@ -1,0 +1,38 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout>
+	<section class="pt-48 pb-32 min-h-screen" style="background-color: #F5F1ED;">
+		<div class="container mx-auto px-3 sm:px-4 lg:px-6">
+			<h1 class="text-4xl md:text-5xl font-bold text-center mb-4">가격 안내</h1>
+			<p class="text-center text-gray-600 mb-20">모든 견적은 제품의 모델링 난이도와 작업 범위에 따라 상이하며 정확한 금액은 상담 후 확정됩니다.</p>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+				<!-- Standard -->
+				<div class="bg-white rounded-lg shadow-lg p-8 aspect-[3/4] flex flex-col justify-between">
+					<h2 class="text-2xl font-bold text-black">Standard</h2>
+					<p class="text-right font-bold"><span class="text-2xl">₩</span><span class="text-3xl">33,000원~</span></p>
+				</div>
+
+				<!-- Deluxe -->
+				<div class="bg-white rounded-lg shadow-lg p-8 aspect-[3/4] flex flex-col justify-between">
+					<h2 class="text-2xl font-bold text-black">Deluxe</h2>
+					<p class="text-right font-bold"><span class="text-2xl">₩</span><span class="text-3xl">66,000원~</span></p>
+				</div>
+
+				<!-- Premium -->
+				<div class="bg-white rounded-lg shadow-lg p-8 aspect-[3/4] flex flex-col justify-between">
+					<h2 class="text-2xl font-bold text-black">Premium</h2>
+					<p class="text-right font-bold"><span class="text-2xl">₩</span><span class="text-3xl">99,000원~</span></p>
+				</div>
+
+				<!-- Package -->
+				<div class="rounded-lg shadow-lg p-8 aspect-[3/4] flex flex-col justify-between" style="background-color: #A89580;">
+					<h2 class="text-2xl font-bold text-black">All-In-One</h2>
+					<p class="text-right font-bold"><span class="text-2xl">₩</span><span class="text-3xl">820,000원~</span></p>
+				</div>
+			</div>
+		</div>
+	</section>
+</MainLayout>

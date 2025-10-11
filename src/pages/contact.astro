@@ -24,7 +24,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 							<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 							</svg>
-							<a href="mailto:legatodesign@naver.com" class="text-xl hover:underline tracking-wide">legatodesign@naver.com</a>
+							<a href="mailto:legatodesign@naver.com" class="text-xl hover:underline tracking-wider">legatodesign@naver.com</a>
 						</div>
 					</div>
 				</div>
@@ -35,7 +35,9 @@ import MainLayout from '../layouts/MainLayout.astro';
 						<h2 class="text-3xl font-bold mb-2">견적 문의 가이드</h2>
 						<p class="text-base text-gray-600">의뢰 시 아래 내용을 준비해주시면 더욱 빠르고 정확한 상담이 가능합니다.</p>
 					</div>
-					<div class="bg-black text-white p-12 pl-16 w-full h-[600px] flex flex-col justify-center">
+					<div class="bg-black text-white w-full h-[600px] flex flex-col justify-center rounded-lg relative">
+						<div class="absolute inset-4 border-2 border-white rounded-lg"></div>
+						<div class="relative z-10 px-12 pl-16">
 						<div class="space-y-8">
 							<div>
 								<h3 class="text-2xl font-bold mb-3">필요하신 컷 구성 예시</h3>
@@ -49,13 +51,14 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 							<div>
 								<h3 class="text-2xl font-bold mb-3">제품 외형 확인용 이미지</h3>
-								<p class="text-lg text-gray-300">정확한 견적 산정에 도움이 됩니다.</p>
+								<p class="text-lg text-gray-300">의뢰하시는 제품의 실물 사진이나 외형이 유사한 제품 이미지를 함께 전달해주시면 정확한 견적 산정에 큰 도움이 됩니다.</p>
 							</div>
 
 							<div>
 								<h3 class="text-2xl font-bold mb-3">제품 라벨 디자인 .AI 파일</h3>
 								<p class="text-lg text-gray-300">진행 시 전달 주시면 됩니다.</p>
 							</div>
+						</div>
 						</div>
 					</div>
 				</div>
