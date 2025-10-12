@@ -6,24 +6,24 @@ collections:
   - id: mockup
     name: Mockup
 images:
-  - path: featured/can.png
+  - path: whatWeDo/whatWeDo1.png
     meta:
-      title: Can Design
-      description: 3D product design rendering
+      title: 배경이 없는 제품 단독 이미지
+      description: 누끼컷 제품 이미지
       collections:
         - featured
     exif: {}
-  - path: featured/lemon2.jpg
+  - path: whatWeDo/whatWeDo2.jpg
     meta:
-      title: Lemon Product
-      description: 3D product visualization
+      title: 제품이 돋보이는 단색배경 이미지
+      description: 단색 배경 제품 이미지
       collections:
         - featured
     exif: {}
-  - path: featured/bellafood.jpg
+  - path: whatWeDo/whatWeDo3.png
     meta:
-      title: Bella Food
-      description: Food product packaging design
+      title: 오브제, 조명, 구도를 활용해 연출한 감각적인 이미지
+      description: 연출 제품 이미지
       collections:
         - featured
     exif: {}
@@ -275,6 +275,48 @@ images:
   - path: product/theSera.png
     meta:
       title: The Sera
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/sand3.png
+    meta:
+      title: Sand 3
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/lippie2.jpg
+    meta:
+      title: Lippie 2
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/design11.png
+    meta:
+      title: Design 11
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/lippie1.jpg
+    meta:
+      title: Lippie 1
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/melty.png
+    meta:
+      title: Melty
+      description: Product design
+      collections:
+        - product
+    exif: {}
+  - path: product/alphaglow.png
+    meta:
+      title: Alphaglow
       description: Product design
       collections:
         - product
