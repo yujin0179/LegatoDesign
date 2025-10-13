@@ -24,21 +24,21 @@ const cardData = [
 	<h2 class="text-2xl md:text-4xl font-bold mb-4">What We Do</h2>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-sm md:max-w-none mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-xs md:max-w-none mx-auto">
 	{cardData.map((card) => (
 		<div class="bg-white rounded-lg shadow-lg overflow-hidden">
 			<div class="p-4 md:p-6 text-center">
 				<h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">{card.title}</h3>
 			</div>
-			<div class="aspect-square overflow-hidden">
+			<a href={card.image.src.src} class="glightbox aspect-square overflow-hidden block" data-gallery="what-we-do">
 				{card.image && (
 					<img
 						src={card.image.src.src}
 						alt={card.image.title || card.title}
-						class="w-full h-full object-cover"
+						class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
 					/>
 				)}
-			</div>
+			</a>
 		</div>
 	))}
 </div>
