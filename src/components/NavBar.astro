@@ -5,9 +5,9 @@ const title = siteConfig.title;
 
 const base = import.meta.env.BASE_URL;
 const menuItems = [
-	{ name: 'Works', link: `${base}/collections/product` },
-	{ name: 'About', link: `${base}/about` },
-	{ name: 'Contact', link: `${base}/contact` },
+	{ name: 'Works', link: `${base}collections/product` },
+	{ name: 'About', link: `${base}about` },
+	{ name: 'Contact', link: `${base}contact` },
 ];
 ---
 
@@ -45,7 +45,7 @@ const menuItems = [
 
 		<!-- Price Button (Desktop) -->
 		<a
-			href={`${base}/pricing`}
+			href={`${base}pricing`}
 			class="hidden md:block bg-black text-white font-bold px-6 py-2 rounded-full hover:bg-gray-800 transition-colors"
 		>
 			가격안내
@@ -81,7 +81,7 @@ const menuItems = [
 				))
 			}
 			<a
-				href={`${base}/pricing`}
+				href={`${base}pricing`}
 				class="text-lg font-bold bg-black text-white px-6 py-3 rounded-full text-center hover:bg-gray-800 transition-colors"
 				@click="isOpen = false"
 			>
