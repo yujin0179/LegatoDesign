@@ -20,15 +20,15 @@ const cardData = [
 ];
 ---
 
-<div class="max-w-2xl mx-auto text-center mb-16">
-	<h2 class="text-3xl md:text-4xl font-bold mb-4">What We Do</h2>
+<div class="max-w-2xl mx-auto text-center mb-12 md:mb-16">
+	<h2 class="text-2xl md:text-4xl font-bold mb-4">What We Do</h2>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-md md:max-w-none mx-auto">
 	{cardData.map((card) => (
 		<div class="bg-white rounded-lg shadow-lg overflow-hidden">
-			<div class="p-6 text-center">
-				<h3 class="text-lg font-semibold mb-4">{card.title}</h3>
+			<div class="p-4 md:p-6 text-center">
+				<h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">{card.title}</h3>
 			</div>
 			<div class="aspect-square overflow-hidden">
 				{card.image && (
@@ -45,7 +45,7 @@ const cardData = [
 
 <div class="flex justify-end mt-12">
 	<a
-		href={`${base}/collections/product`}
+		href={`${base}collections/product`}
 		class="inline-block px-8 py-3 border-2 border-black rounded-md hover:bg-black hover:text-white transition-all duration-300 text-base font-medium transform hover:scale-105"
 	>
 		View Works

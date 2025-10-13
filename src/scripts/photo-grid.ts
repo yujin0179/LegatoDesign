@@ -42,7 +42,7 @@ function applyMasonryLayout(container: HTMLElement, imageLinks: HTMLElement[], m
 	// Responsive column count based on screen width
 	let columnCount = maxColumns;
 	if (containerWidth < 640) {
-		columnCount = 1; // mobile
+		columnCount = 2; // mobile
 	} else if (containerWidth < 768) {
 		columnCount = 2; // tablet
 	} else if (containerWidth < 1024) {
