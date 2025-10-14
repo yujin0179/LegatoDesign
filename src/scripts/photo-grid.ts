@@ -1,6 +1,6 @@
 import GLightbox from 'glightbox';
 
-const GAP = 16; // gap in pixels
+const GAP = 8; // gap in pixels (reduced from 16 to 8)
 
 // Store user preference for mobile column count
 let userMobileColumnPreference: number | null = null;
@@ -24,17 +24,17 @@ export async function setupGallery() {
 	// Setup progressive image loading
 	setupProgressiveImageLoading();
 
-	// Wait for all images to load
-	await waitForImagesToLoad(container);
-
 	// Get column count from data attribute (max columns)
 	const maxColumns = parseInt(container.getAttribute('data-columns') || '4');
 
-	// Apply masonry layout
-	applyMasonryLayout(container, imageLinks, maxColumns);
-
-	// Setup column toggle buttons (mobile only)
+	// Setup column toggle buttons BEFORE applying layout (to set userMobileColumnPreference)
 	setupColumnToggle(container, imageLinks, maxColumns);
+
+	// Wait for all images to load
+	await waitForImagesToLoad(container);
+
+	// Apply masonry layout (will use userMobileColumnPreference set above)
+	applyMasonryLayout(container, imageLinks, maxColumns);
 
 	// Initialize GLightbox with preload settings
 	GLightbox({

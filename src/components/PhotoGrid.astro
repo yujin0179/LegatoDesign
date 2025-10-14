@@ -23,6 +23,18 @@ const placeholders = await Promise.all(
 		})
 	)
 );
+
+// Generate optimized full-size images for GLightbox (max 1920px, quality 80)
+const optimizedImages = await Promise.all(
+	images.map(image =>
+		getImage({
+			src: image.src,
+			width: Math.min(image.src.width, 1920),
+			quality: 80,
+			format: 'webp'
+		})
+	)
+);
 ---
 
 <!-- Mobile column toggle buttons (hidden on desktop) -->
@@ -56,7 +68,7 @@ const placeholders = await Promise.all(
 	{
 		images.map((image, index) => (
 			<a
-				href={image.src.src}
+				href={optimizedImages[index].src}
 				class="photo-item glightbox absolute transition-transform hover:scale-[1.02] hover:z-10"
 				data-gallery="gallery1"
 				data-type="image"
@@ -115,6 +127,7 @@ const placeholders = await Promise.all(
 		height: 100%;
 		overflow: hidden;
 		background-color: #f3f4f6;
+		border-radius: 0.375rem; /* 6px rounded corners */
 	}
 
 	.progressive-placeholder {
