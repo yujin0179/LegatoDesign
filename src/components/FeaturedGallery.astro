@@ -25,21 +25,19 @@ const cardData = [
 	<h2 class="text-2xl md:text-4xl font-bold mb-4">What We Do</h2>
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mx-auto max-w-sm md:max-w-none">
+<div class="what-we-do-grid">
 	{cardData.map((card) => (
-		<div class="what-we-do-card bg-white rounded-lg overflow-hidden">
-			<div class="p-4 md:p-6 text-center">
-				<h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">{card.title}</h3>
+		<div class="what-we-do-card">
+			<div class="card-text">
+				<h3>{card.title}</h3>
 			</div>
-			<div class="aspect-square overflow-hidden">
+			<div class="card-image">
 				{card.image && (
-					<Image
-						src={card.image.src}
+					<img
+						src={card.image.src.src}
 						alt={card.image.title || card.title}
-						quality={80}
-						format="webp"
-						loading="eager"
-						class="w-full h-full object-cover"
+						loading="lazy"
+						decoding="async"
 					/>
 				)}
 			</div>
@@ -48,12 +46,64 @@ const cardData = [
 </div>
 
 <style>
-	/* Optimize image rendering for smooth scrolling */
-	.what-we-do-card img {
-		transform: translateZ(0);
-		-webkit-transform: translateZ(0);
-		backface-visibility: hidden;
-		-webkit-backface-visibility: hidden;
+	.what-we-do-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		max-width: 24rem;
+		margin: 0 auto;
+	}
+
+	@media (min-width: 768px) {
+		.what-we-do-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2rem;
+			max-width: none;
+		}
+	}
+
+	.what-we-do-card {
+		background: white;
+		border-radius: 0.5rem;
+		overflow: hidden;
+	}
+
+	.card-text {
+		padding: 1rem 1.5rem;
+		text-align: center;
+	}
+
+	.card-text h3 {
+		font-size: 1rem;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	@media (min-width: 768px) {
+		.card-text {
+			padding: 1.5rem;
+		}
+		.card-text h3 {
+			font-size: 1.125rem;
+		}
+	}
+
+	.card-image {
+		width: 100%;
+		position: relative;
+		padding-bottom: 100%; /* aspect-ratio 1:1 */
+	}
+
+	.card-image img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transform: translate3d(0, 0, 0);
+		-webkit-transform: translate3d(0, 0, 0);
 	}
 
 	/* Desktop hover effect */
