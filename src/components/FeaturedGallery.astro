@@ -1,9 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import { featuredCollectionId, getImages } from '../data/imageStore';
 
 const images = await getImages({ collection: featuredCollectionId });
-const base = import.meta.env.BASE_URL;
 
 const cardData = [
 	{
