@@ -27,7 +27,7 @@ const cardData = [
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mx-auto max-w-sm md:max-w-none">
 	{cardData.map((card) => (
-		<div class="what-we-do-card bg-white rounded-lg overflow-hidden border border-gray-200">
+		<div class="what-we-do-card bg-white rounded-lg overflow-hidden">
 			<div class="p-4 md:p-6 text-center">
 				<h3 class="text-base md:text-lg font-semibold mb-3 md:mb-4">{card.title}</h3>
 			</div>
@@ -36,12 +36,9 @@ const cardData = [
 					<Image
 						src={card.image.src}
 						alt={card.image.title || card.title}
-						width={600}
-						height={600}
 						quality={80}
 						format="webp"
 						loading="eager"
-						decoding="async"
 						class="w-full h-full object-cover"
 					/>
 				)}
