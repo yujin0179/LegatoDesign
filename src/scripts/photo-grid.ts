@@ -33,12 +33,16 @@ export async function setupGallery() {
 	// Setup column toggle buttons (mobile only)
 	setupColumnToggle(container, imageLinks, maxColumns);
 
-	// Initialize GLightbox
+	// Initialize GLightbox with preload settings
 	GLightbox({
 		selector: '.glightbox',
 		openEffect: 'zoom',
 		closeEffect: 'fade',
 		closeOnOutsideClick: true,
+		preload: true, // Preload next/prev images
+		loop: true,
+		zoomable: true,
+		draggable: true,
 	});
 }
 

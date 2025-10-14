@@ -13,9 +13,9 @@ const base = import.meta.env.BASE_URL;
 		<p class="mt-4 text-base md:text-lg text-gray-700">디자인으로 제품의 가치를 연주합니다.</p>
 		<a
 			href="#what-we-do"
-			class="mt-8 inline-block px-6 py-3 border-2 border-black rounded-md
+			class="mt-8 inline-block px-8 py-4 border-2 border-black rounded-md
                       hover:bg-black hover:text-white transition-all duration-300
-                      text-sm md:text-base font-medium
+                      text-base md:text-lg font-medium
                       transform hover:scale-105 active:scale-95
                       animate-pulse-border"
 		>
@@ -27,10 +27,13 @@ const base = import.meta.env.BASE_URL;
 <style>
 	@keyframes pulse-border {
 		0% {
-			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+		}
+		50% {
+			box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.4);
 		}
 		100% {
-			box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0);
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 		}
 	}
 
