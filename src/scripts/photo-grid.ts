@@ -21,6 +21,9 @@ export async function setupGallery() {
 		return;
 	}
 
+	// Setup progressive image loading
+	setupProgressiveImageLoading();
+
 	// Wait for all images to load
 	await waitForImagesToLoad(container);
 
@@ -43,6 +46,22 @@ export async function setupGallery() {
 		loop: true,
 		zoomable: true,
 		draggable: true,
+	});
+}
+
+function setupProgressiveImageLoading() {
+	// Add 'loaded' class to images when they finish loading
+	const progressiveImages = document.querySelectorAll('.progressive-image');
+	progressiveImages.forEach((img) => {
+		if (img instanceof HTMLImageElement) {
+			if (img.complete) {
+				img.classList.add('loaded');
+			} else {
+				img.addEventListener('load', () => {
+					img.classList.add('loaded');
+				});
+			}
+		}
 	});
 }
 

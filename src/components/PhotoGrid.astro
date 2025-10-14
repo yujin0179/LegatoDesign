@@ -1,7 +1,7 @@
 ---
 import 'glightbox/dist/css/glightbox.css';
 import '../styles/glightbox-custom.css';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { Image as ImageType } from '../data/galleryData';
 
 interface Props {
@@ -10,6 +10,19 @@ interface Props {
 }
 
 const { images, columns = 4 } = Astro.props;
+
+// Generate tiny placeholder images
+const placeholders = await Promise.all(
+	images.map(image =>
+		getImage({
+			src: image.src,
+			width: 20,
+			height: 20,
+			quality: 10,
+			format: 'webp'
+		})
+	)
+);
 ---
 
 <!-- Mobile column toggle buttons (hidden on desktop) -->
@@ -41,24 +54,34 @@ const { images, columns = 4 } = Astro.props;
 
 <section id="photo-grid" class="relative w-full mx-auto overflow-hidden" data-columns={columns} data-mobile-columns="1">
 	{
-		images.map((image) => (
+		images.map((image, index) => (
 			<a
 				href={image.src.src}
 				class="photo-item glightbox absolute transition-transform hover:scale-[1.02] hover:z-10"
 				data-gallery="gallery1"
 				data-type="image"
 			>
-				<Image
-					src={image.src}
-					quality={70}
-					format="webp"
-					width={image.src.width}
-					height={image.src.height}
-					loading="lazy"
-					decoding="async"
-					class="w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
-					alt={image.title}
-				/>
+				<div class="progressive-image-container">
+					<!-- Tiny blurred placeholder -->
+					<img
+						src={placeholders[index].src}
+						class="progressive-placeholder"
+						alt=""
+						aria-hidden="true"
+					/>
+					<!-- Full quality image -->
+					<Image
+						src={image.src}
+						quality={70}
+						format="webp"
+						width={image.src.width}
+						height={image.src.height}
+						loading="lazy"
+						decoding="async"
+						class="progressive-image w-full h-full object-cover rounded-sm shadow-sm hover:shadow-lg transition-shadow"
+						alt={image.title}
+					/>
+				</div>
 			</a>
 		))
 	}
@@ -83,6 +106,38 @@ const { images, columns = 4 } = Astro.props;
 
 	.column-toggle-btn.active:hover {
 		border-color: #000;
+	}
+
+	/* Progressive image loading */
+	.progressive-image-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background-color: #f3f4f6;
+	}
+
+	.progressive-placeholder {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: blur(20px);
+		transform: scale(1.1);
+		z-index: 1;
+	}
+
+	.progressive-image {
+		position: relative;
+		z-index: 2;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+
+	.progressive-image.loaded {
+		opacity: 1;
 	}
 </style>
 
