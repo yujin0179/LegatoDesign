@@ -24,6 +24,18 @@ const base = import.meta.env.BASE_URL;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{owner}</title>
+		<style>
+			/* Prevent FOUC (Flash of Unstyled Content) */
+			body {
+				visibility: hidden;
+				opacity: 0;
+			}
+			body.loaded {
+				visibility: visible;
+				opacity: 1;
+				transition: opacity 0.2s ease-in;
+			}
+		</style>
 	</head>
 	<body>
 		<NavBar />
@@ -43,3 +55,14 @@ const base = import.meta.env.BASE_URL;
 </html>
 
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script>
+	// Prevent FOUC by showing body only when fully loaded
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', function() {
+			document.body.classList.add('loaded');
+		});
+	} else {
+		document.body.classList.add('loaded');
+	}
+</script>
