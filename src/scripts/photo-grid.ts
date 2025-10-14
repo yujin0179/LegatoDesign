@@ -56,12 +56,14 @@ function setupColumnToggle(container: HTMLElement, imageLinks: HTMLElement[], ma
 	const savedPreference = localStorage.getItem('mobile-column-preference');
 	if (savedPreference) {
 		userMobileColumnPreference = parseInt(savedPreference);
-		updateActiveButton(userMobileColumnPreference === 1 ? col1Btn : col2Btn);
 	} else {
 		// Set default to 1 column if no preference saved
 		userMobileColumnPreference = 1;
-		updateActiveButton(col1Btn);
+		localStorage.setItem('mobile-column-preference', '1');
 	}
+
+	// Update button state immediately before layout
+	updateActiveButton(userMobileColumnPreference === 1 ? col1Btn : col2Btn);
 
 	col1Btn.addEventListener('click', () => {
 		userMobileColumnPreference = 1;
