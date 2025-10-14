@@ -46,11 +46,19 @@ const cardData = [
 <style>
 	@media (hover: hover) and (pointer: fine) {
 		.what-we-do-card {
-			transition: all 0.3s ease;
+			transition: transform 0.3s ease;
+			will-change: transform;
 		}
 
 		.what-we-do-card:hover {
 			transform: scale(1.05) translateY(-0.5rem);
+		}
+	}
+
+	/* Ensure no transitions on mobile */
+	@media (hover: none) {
+		.what-we-do-card {
+			transition: none !important;
 		}
 	}
 </style>
