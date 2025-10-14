@@ -52,11 +52,15 @@ function setupColumnToggle(container: HTMLElement, imageLinks: HTMLElement[], ma
 
 	if (!col1Btn || !col2Btn) return;
 
-	// Load saved preference from localStorage
+	// Load saved preference from localStorage, default to 1 column
 	const savedPreference = localStorage.getItem('mobile-column-preference');
 	if (savedPreference) {
 		userMobileColumnPreference = parseInt(savedPreference);
 		updateActiveButton(userMobileColumnPreference === 1 ? col1Btn : col2Btn);
+	} else {
+		// Set default to 1 column if no preference saved
+		userMobileColumnPreference = 1;
+		updateActiveButton(col1Btn);
 	}
 
 	col1Btn.addEventListener('click', () => {
