@@ -12,7 +12,32 @@ interface Props {
 const { images, columns = 4 } = Astro.props;
 ---
 
-<section id="photo-grid" class="relative w-full mx-auto overflow-hidden" data-columns={columns}>
+<!-- Mobile column toggle buttons (hidden on desktop) -->
+<div class="flex justify-end gap-2 mb-4 md:hidden">
+	<button
+		id="col-1-btn"
+		class="column-toggle-btn active px-4 py-2 rounded-md border-2 transition-all duration-200"
+		data-columns="1"
+		aria-label="1열 보기"
+	>
+		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<rect x="9" y="3" width="6" height="18" rx="1"/>
+		</svg>
+	</button>
+	<button
+		id="col-2-btn"
+		class="column-toggle-btn px-4 py-2 rounded-md border-2 transition-all duration-200"
+		data-columns="2"
+		aria-label="2열 보기"
+	>
+		<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<rect x="3" y="3" width="7" height="18" rx="1"/>
+			<rect x="14" y="3" width="7" height="18" rx="1"/>
+		</svg>
+	</button>
+</div>
+
+<section id="photo-grid" class="relative w-full mx-auto overflow-hidden" data-columns={columns} data-mobile-columns="1">
 	{
 		images.map((image) => (
 			<a
@@ -35,6 +60,28 @@ const { images, columns = 4 } = Astro.props;
 		))
 	}
 </section>
+
+<style>
+	.column-toggle-btn {
+		border-color: #e5e7eb;
+		color: #6b7280;
+		background-color: white;
+	}
+
+	.column-toggle-btn.active {
+		border-color: #000;
+		color: #000;
+		background-color: #f9fafb;
+	}
+
+	.column-toggle-btn:hover {
+		border-color: #9ca3af;
+	}
+
+	.column-toggle-btn.active:hover {
+		border-color: #000;
+	}
+</style>
 
 <script>
 	import '../scripts/photo-grid';

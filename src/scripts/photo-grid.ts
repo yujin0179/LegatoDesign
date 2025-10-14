@@ -2,6 +2,9 @@ import GLightbox from 'glightbox';
 
 const GAP = 16; // gap in pixels
 
+// Store user preference for mobile column count
+let userMobileColumnPreference: number | null = null;
+
 export async function setupGallery() {
 	if (typeof document === 'undefined') return;
 
@@ -27,6 +30,9 @@ export async function setupGallery() {
 	// Apply masonry layout
 	applyMasonryLayout(container, imageLinks, maxColumns);
 
+	// Setup column toggle buttons (mobile only)
+	setupColumnToggle(container, imageLinks, maxColumns);
+
 	// Initialize GLightbox
 	GLightbox({
 		selector: '.glightbox',
@@ -36,13 +42,49 @@ export async function setupGallery() {
 	});
 }
 
+function setupColumnToggle(container: HTMLElement, imageLinks: HTMLElement[], maxColumns: number) {
+	const col1Btn = document.getElementById('col-1-btn');
+	const col2Btn = document.getElementById('col-2-btn');
+
+	if (!col1Btn || !col2Btn) return;
+
+	// Load saved preference from localStorage
+	const savedPreference = localStorage.getItem('mobile-column-preference');
+	if (savedPreference) {
+		userMobileColumnPreference = parseInt(savedPreference);
+		updateActiveButton(userMobileColumnPreference === 1 ? col1Btn : col2Btn);
+	}
+
+	col1Btn.addEventListener('click', () => {
+		userMobileColumnPreference = 1;
+		localStorage.setItem('mobile-column-preference', '1');
+		updateActiveButton(col1Btn);
+		applyMasonryLayout(container, imageLinks, maxColumns);
+	});
+
+	col2Btn.addEventListener('click', () => {
+		userMobileColumnPreference = 2;
+		localStorage.setItem('mobile-column-preference', '2');
+		updateActiveButton(col2Btn);
+		applyMasonryLayout(container, imageLinks, maxColumns);
+	});
+}
+
+function updateActiveButton(activeBtn: HTMLElement) {
+	document.querySelectorAll('.column-toggle-btn').forEach(btn => {
+		btn.classList.remove('active');
+	});
+	activeBtn.classList.add('active');
+}
+
 function applyMasonryLayout(container: HTMLElement, imageLinks: HTMLElement[], maxColumns: number) {
 	const containerWidth = container.clientWidth;
 
 	// Responsive column count based on screen width
 	let columnCount = maxColumns;
 	if (containerWidth < 640) {
-		columnCount = 2; // mobile
+		// Use user preference on mobile, default to 1 for better initial loading
+		columnCount = userMobileColumnPreference !== null ? userMobileColumnPreference : 1;
 	} else if (containerWidth < 768) {
 		columnCount = 2; // tablet
 	} else if (containerWidth < 1024) {
