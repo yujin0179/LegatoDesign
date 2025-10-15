@@ -44,8 +44,10 @@ export async function setupGallery() {
 		closeOnOutsideClick: true,
 		preload: true, // Preload next/prev images
 		loop: true,
-		zoomable: true,
-		draggable: true,
+		zoomable: false, // Disable zoom to prevent conflicts with touch gestures
+		draggable: false, // Disable drag to prevent background movement issues on mobile
+		touchNavigation: true, // Enable swipe navigation on mobile
+		keyboardNavigation: true, // Enable keyboard navigation
 	});
 }
 
