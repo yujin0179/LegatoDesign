@@ -27,7 +27,7 @@ images:
       collections:
         - featured
     exif: {}
-  - path: product/can.png
+  - path: product/can.jpg
     meta:
       title: Can Design
       description: 3D product design rendering
@@ -69,7 +69,7 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/serum1.png
+  - path: product/serum1.jpg
     meta:
       title: Serum
       description: Product design
@@ -83,7 +83,7 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/apple.png
+  - path: product/apple.jpg
     meta:
       title: Apple
       description: Product design
@@ -97,14 +97,14 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/drip.png
+  - path: product/drip.jpg
     meta:
       title: Drip Coffee
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/LemonSherbet.png
+  - path: product/LemonSherbet.jpg
     meta:
       title: Lemon Sherbet
       description: Product design
@@ -118,28 +118,28 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/lipbalm.png
+  - path: product/lipbalm.jpg
     meta:
       title: Lip Balm
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/pineappleLemon.png
+  - path: product/pineappleLemon.jpg
     meta:
       title: Pineapple Lemon
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/HotPack.png
+  - path: product/HotPack.jpg
     meta:
       title: Hot Pack
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/cereal.png
+  - path: product/cereal.jpg
     meta:
       title: Cereal
       description: Product design
@@ -174,28 +174,28 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/flower1.png
+  - path: product/flower1.jpg
     meta:
       title: Flower Spray
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/grapefruitSpray.png
+  - path: product/grapefruitSpray.jpg
     meta:
       title: Grapefruit Spray
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/plain3.png
+  - path: product/plain3.jpg
     meta:
       title: Plain
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/CleansingOil-2.png
+  - path: product/CleansingOil-2.jpg
     meta:
       title: Cleansing Oil
       description: Product design
@@ -209,7 +209,7 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/byeori.png
+  - path: product/byeori.jpg
     meta:
       title: Byeori
       description: Product design
@@ -223,63 +223,63 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/lemon3.png
+  - path: product/lemon3.jpg
     meta:
       title: Lemon 3
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/mask2.png
+  - path: product/mask2.jpg
     meta:
       title: Mask
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/mia.png
+  - path: product/mia.jpg
     meta:
       title: Mia
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/olive1.png
+  - path: product/olive1.jpg
     meta:
       title: Olive
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/olive2.png
+  - path: product/olive2.jpg
     meta:
       title: Olive 2
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/tripleBalance.png
+  - path: product/tripleBalance.jpg
     meta:
       title: Triple Balance
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/grey.png
+  - path: product/grey.jpg
     meta:
       title: Grey
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/theSera.png
+  - path: product/theSera.jpg
     meta:
       title: The Sera
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/sand3.png
+  - path: product/sand3.jpg
     meta:
       title: Sand 3
       description: Product design
@@ -293,7 +293,7 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/design11.png
+  - path: product/design11.jpg
     meta:
       title: Design 11
       description: Product design
@@ -307,14 +307,14 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/melty.png
+  - path: product/melty.jpg
     meta:
       title: Melty
       description: Product design
       collections:
         - product
     exif: {}
-  - path: product/alphaglow.png
+  - path: product/alphaglow.jpg
     meta:
       title: Alphaglow
       description: Product design
