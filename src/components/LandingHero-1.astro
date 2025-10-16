@@ -62,26 +62,17 @@ const base = import.meta.env.BASE_URL;
 		top: 0;
 		left: 0;
 		width: 100vw;
-		height: 100vh;
-		min-height: 100vh;
-		max-height: 100vh;
+		height: 100svh; /* Use small viewport height for mobile */
 		object-fit: cover;
 		object-position: center;
 		z-index: 1;
 		pointer-events: none;
-		will-change: transform;
-		transform: translateZ(0);
-		-webkit-transform: translateZ(0);
-		backface-visibility: hidden;
-		-webkit-backface-visibility: hidden;
 	}
 
-	/* Fix for mobile viewport height changes during scroll */
-	@supports (-webkit-touch-callout: none) {
+	/* Fallback for browsers that don't support svh */
+	@supports not (height: 100svh) {
 		.hero-video {
-			height: -webkit-fill-available;
-			min-height: -webkit-fill-available;
-			max-height: -webkit-fill-available;
+			height: 100vh;
 		}
 	}
 
@@ -227,31 +218,6 @@ const base = import.meta.env.BASE_URL;
 </style>
 
 <script>
-	// Fix mobile viewport height on initial load to prevent resize during scroll
-	function setFixedViewportHeight() {
-		const vh = window.innerHeight;
-		document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-		const videos = document.querySelectorAll('.hero-video') as NodeListOf<HTMLVideoElement>;
-		videos.forEach(video => {
-			(video as HTMLElement).style.height = `${vh}px`;
-			(video as HTMLElement).style.minHeight = `${vh}px`;
-			(video as HTMLElement).style.maxHeight = `${vh}px`;
-		});
-	}
-
-	// Set on load
-	setFixedViewportHeight();
-
-	// Only update on orientation change or significant resize, not during scroll
-	let resizeTimer: number;
-	window.addEventListener('resize', () => {
-		clearTimeout(resizeTimer);
-		resizeTimer = window.setTimeout(() => {
-			setFixedViewportHeight();
-		}, 200);
-	});
-
 	// Handle page visibility changes (app switching on mobile)
 	const videos = document.querySelectorAll('.hero-video') as NodeListOf<HTMLVideoElement>;
 
