@@ -55,25 +55,29 @@ const base = import.meta.env.BASE_URL;
 		bottom: 0;
 		z-index: 0;
 		overflow: hidden;
+		width: 100%;
+		height: 100vh;
+		min-height: 100vh;
+	}
+
+	/* Use small viewport height on mobile to prevent resize */
+	@supports (height: 100svh) {
+		.hero-container {
+			height: 100svh;
+			min-height: 100svh;
+		}
 	}
 
 	.hero-video {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100vw;
-		height: 100svh; /* Use small viewport height for mobile */
+		width: 100%;
+		height: 100%;
 		object-fit: cover;
 		object-position: center;
 		z-index: 1;
 		pointer-events: none;
-	}
-
-	/* Fallback for browsers that don't support svh */
-	@supports not (height: 100svh) {
-		.hero-video {
-			height: 100vh;
-		}
 	}
 
 	.hero-video-desktop {
