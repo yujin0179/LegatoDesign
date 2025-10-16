@@ -10,7 +10,6 @@ const base = import.meta.env.BASE_URL;
 	<video
 		class="hero-video hero-video-mobile"
 		autoplay
-		loop
 		muted
 		playsinline
 		preload="auto"
@@ -22,7 +21,6 @@ const base = import.meta.env.BASE_URL;
 	<video
 		class="hero-video hero-video-desktop"
 		autoplay
-		loop
 		muted
 		playsinline
 		preload="auto"
@@ -34,7 +32,7 @@ const base = import.meta.env.BASE_URL;
 		<p class="hero-subtitle">3D 제품촬영 전문 스튜디오</p>
 		<h1 class="hero-title">
 			<span class="desktop-title">{owner}</span>
-			<span class="mobile-title">LEGATO<br/>DESIGN</span>
+			<span class="mobile-title">Legato<br/>Design</span>
 		</h1>
 		<a
 			href="#what-we-do"
@@ -57,15 +55,14 @@ const base = import.meta.env.BASE_URL;
 	}
 
 	.hero-video {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		object-fit: cover;
 		object-position: center;
 		z-index: 1;
-		pointer-events: none;
 	}
 
 	.hero-video-desktop {
@@ -129,7 +126,6 @@ const base = import.meta.env.BASE_URL;
 		line-height: 1.1;
 		margin-bottom: 1rem;
 		width: 100%;
-		letter-spacing: 0.03em;
 	}
 
 	@media (min-width: 768px) {
@@ -210,19 +206,11 @@ const base = import.meta.env.BASE_URL;
 </style>
 
 <script>
-	// Handle page visibility changes (app switching on mobile)
+	// Play videos once and keep last frame
 	const videos = document.querySelectorAll('.hero-video') as NodeListOf<HTMLVideoElement>;
-
-	document.addEventListener('visibilitychange', () => {
-		if (!document.hidden) {
-			// Page is visible again - resume video if paused
-			videos.forEach(video => {
-				if (video.paused) {
-					video.play().catch(err => {
-						console.log('Video play prevented:', err);
-					});
-				}
-			});
-		}
+	videos.forEach(video => {
+		video.addEventListener('ended', () => {
+			video.pause();
+		});
 	});
 </script>
