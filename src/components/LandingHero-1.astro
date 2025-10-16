@@ -106,30 +106,37 @@ const base = import.meta.env.BASE_URL;
 	}
 
 	.hero-content {
-		position: relative;
+		position: absolute;
+		top: 30vh;
+		left: 50%;
+		transform: translateX(-50%);
 		z-index: 20;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: flex-start;
 		text-align: center;
-		height: 100%;
 		max-width: 600px;
-		margin: 0 auto;
 		padding: 0 1rem;
-		padding-top: 30vh;
+		width: 100%;
 	}
 
 	@media (min-width: 768px) {
 		.hero-content {
+			position: relative;
+			top: auto;
+			left: auto;
+			transform: none;
+			height: 100%;
+			margin: 0 auto;
 			padding-top: 30vh;
 		}
 	}
 
 	.hero-subtitle {
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		color: #374151;
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.4rem;
 		width: 100%;
 		max-width: 400px;
 	}
@@ -143,10 +150,10 @@ const base = import.meta.env.BASE_URL;
 
 	.hero-title {
 		font-family: 'Cormorant Garamond', serif;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		font-weight: bold;
 		line-height: 1.1;
-		margin-bottom: 1rem;
+		margin-bottom: 0.75rem;
 		width: 100%;
 		letter-spacing: 0.03em;
 	}
@@ -184,10 +191,10 @@ const base = import.meta.env.BASE_URL;
 
 	.hero-button {
 		display: inline-block;
-		padding: 0.75rem 1.5rem;
+		padding: 0.6rem 1.2rem;
 		border: 2px solid black;
 		border-radius: 0.375rem;
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		font-weight: 500;
 		color: black;
 		background-color: transparent;
@@ -259,7 +266,7 @@ const base = import.meta.env.BASE_URL;
 		// Set CSS variable as fallback
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-		// Also set hero-container height directly in pixels to prevent resize
+		// Set hero-container and videos height directly in pixels to prevent resize
 		const heroContainer = document.querySelector('.hero-container') as HTMLElement;
 		if (heroContainer) {
 			heroContainer.style.height = `${vh}px`;
@@ -267,6 +274,16 @@ const base = import.meta.env.BASE_URL;
 			heroContainer.style.maxHeight = `${vh}px`;
 			console.log('[Hero] Container height locked to:', vh, 'px');
 		}
+
+		// Also lock video dimensions to prevent zoom
+		const videos = document.querySelectorAll('.hero-video') as NodeListOf<HTMLVideoElement>;
+		videos.forEach(video => {
+			video.style.width = '100%';
+			video.style.height = `${vh}px`;
+			video.style.minHeight = `${vh}px`;
+			video.style.maxHeight = `${vh}px`;
+		});
+		console.log('[Hero] Video heights locked to:', vh, 'px');
 
 		// Log browser info for debugging
 		const ua = navigator.userAgent;
