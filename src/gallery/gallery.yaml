@@ -6,21 +6,21 @@ collections:
   - id: mockup
     name: Mockup
 images:
-  - path: whatWeDo/ACV1.png
+  - path: whatWeDo/ACV1.jpg
     meta:
       title: 배경이 없는 제품 단독 이미지
       description: 누끼컷 제품 이미지
       collections:
         - featured
     exif: {}
-  - path: whatWeDo/ACV2.png
+  - path: whatWeDo/ACV2.jpg
     meta:
       title: 제품이 돋보이는 단색배경 이미지
       description: 단색 배경 제품 이미지
       collections:
         - featured
     exif: {}
-  - path: whatWeDo/ACV3.png
+  - path: whatWeDo/ACV3.jpg
     meta:
       title: 오브제, 조명, 구도를 활용해 연출한 감각적인 이미지
       description: 연출 제품 이미지

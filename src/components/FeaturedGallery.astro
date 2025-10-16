@@ -35,11 +35,11 @@ const cardData = [
 					<Image
 						src={card.image.src}
 						alt={card.image.title || card.title}
-						quality={90}
-						format="png"
+						quality={85}
+						format="webp"
 						width={card.image.src.width}
 						height={card.image.src.height}
-						loading="lazy"
+						loading="eager"
 						decoding="async"
 					/>
 				)}

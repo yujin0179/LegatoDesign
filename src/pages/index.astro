@@ -5,9 +5,22 @@ import FeaturedGallery from '../components/FeaturedGallery.astro';
 ---
 
 <MainLayout>
-	<section class="relative min-h-screen items-center flex py-20 md:py-16 overflow-hidden">
+	<section class="hero-section relative min-h-screen items-center flex py-20 md:py-16 overflow-hidden">
 		<LandingHero />
 	</section>
+	<style>
+		.hero-section {
+			position: relative;
+			touch-action: pan-y pinch-zoom;
+		}
+
+		@media (max-width: 767px) {
+			.hero-section {
+				touch-action: pan-y;
+				-webkit-overflow-scrolling: touch;
+			}
+		}
+	</style>
 
 	<section id="what-we-do" class="featured-section py-20">
 		<div class="container mx-auto px-3 sm:px-4 lg:px-6">

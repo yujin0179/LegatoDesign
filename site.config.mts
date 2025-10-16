@@ -8,9 +8,9 @@ export interface SocialLink {
 }
 
 export default {
-	title: 'Legato Design',
+	title: 'LEGATO DESIGN',
 	favicon: 'icon.ico',
-	owner: 'Legato Design',
+	owner: 'LEGATO DESIGN',
 	profileImage: 'profile5.png',
 	socialLinks: [
 		{
