@@ -10,6 +10,7 @@ const base = import.meta.env.BASE_URL;
 	<video
 		class="hero-video hero-video-mobile"
 		autoplay
+		loop
 		muted
 		playsinline
 		preload="auto"
@@ -21,6 +22,7 @@ const base = import.meta.env.BASE_URL;
 	<video
 		class="hero-video hero-video-desktop"
 		autoplay
+		loop
 		muted
 		playsinline
 		preload="auto"
@@ -32,11 +34,12 @@ const base = import.meta.env.BASE_URL;
 		<p class="hero-subtitle">3D 제품촬영 전문 스튜디오</p>
 		<h1 class="hero-title">
 			<span class="desktop-title">{owner}</span>
-			<span class="mobile-title">Legato<br/>Design</span>
+			<span class="mobile-title">LEGATO<br/>DESIGN</span>
 		</h1>
 		<a
 			href="#what-we-do"
 			class="hero-button"
+			id="what-we-do-btn"
 		>
 			What We Do
 		</a>
@@ -130,6 +133,7 @@ const base = import.meta.env.BASE_URL;
 		line-height: 1.1;
 		margin-bottom: 1rem;
 		width: 100%;
+		letter-spacing: 0.03em;
 	}
 
 	@media (min-width: 768px) {
@@ -210,11 +214,31 @@ const base = import.meta.env.BASE_URL;
 </style>
 
 <script>
-	// Play videos once and keep last frame
+	// Handle page visibility changes (app switching on mobile)
 	const videos = document.querySelectorAll('.hero-video') as NodeListOf<HTMLVideoElement>;
-	videos.forEach(video => {
-		video.addEventListener('ended', () => {
-			video.pause();
-		});
+
+	document.addEventListener('visibilitychange', () => {
+		if (!document.hidden) {
+			// Page is visible again - resume video if paused
+			videos.forEach(video => {
+				if (video.paused) {
+					video.play().catch(err => {
+						console.log('Video play prevented:', err);
+					});
+				}
+			});
+		}
 	});
+
+	// Smooth scroll for What We Do button only
+	const whatWeDoBtn = document.getElementById('what-we-do-btn');
+	if (whatWeDoBtn) {
+		whatWeDoBtn.addEventListener('click', (e) => {
+			e.preventDefault();
+			const target = document.querySelector('#what-we-do');
+			if (target) {
+				target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+		});
+	}
 </script>
