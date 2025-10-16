@@ -5,7 +5,7 @@ import FeaturedGallery from '../components/FeaturedGallery.astro';
 ---
 
 <MainLayout>
-	<section class="relative min-h-screen items-center flex py-20 md:py-16 overflow-hidden">
+	<section class="hero-section relative min-h-screen items-center flex py-20 md:py-16 overflow-hidden">
 		<LandingHero />
 	</section>
 
@@ -15,3 +15,17 @@ import FeaturedGallery from '../components/FeaturedGallery.astro';
 		</div>
 	</section>
 </MainLayout>
+
+<style>
+	.hero-section {
+		-webkit-overflow-scrolling: touch;
+		transform: translateZ(0);
+		-webkit-transform: translateZ(0);
+	}
+
+	.featured-section {
+		background-color: white;
+		position: relative;
+		z-index: 10;
+	}
+</style>
