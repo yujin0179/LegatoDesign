@@ -5,6 +5,16 @@ collections:
     name: Interior
   - id: mockup
     name: Mockup
+  - id: featured
+    name: Featured
+  - id: nature
+    name: Nature
+  - id: street
+    name: Street
+  - id: travel
+    name: Travel
+  - id: whatWeDo
+    name: Whatwedo
 images:
   - path: whatWeDo/ACV1.jpg
     meta:
@@ -33,38 +43,75 @@ images:
       description: 3D product design rendering
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/lemon2.jpg
     meta:
       title: Lemon Product
       description: 3D product visualization
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/perfume3.jpg
     meta:
       title: Perfume Bottle
       description: Elegant perfume bottle design
       collections:
         - product
-    exif: {}
+    exif:
+      captureDate: 2025-08-12T10:41:08.000Z
+      shutterSpeed: .nan
   - path: product/shampoo.jpg
     meta:
       title: Shampoo
       description: Product design
       collections:
         - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/lipstick2-1.jpg
+    meta:
+      title: Lipstick 2-1
+      description: Product design
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/perfume2.jpg
+    meta:
+      title: Perfume
+      description: Product design
+      collections:
+        - product
     exif: {}
+  - path: product/gold1.jpg
+    meta:
+      title: Gold
+      description: Product design
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/lipstick2.jpg
+    meta:
+      title: Lipstick 2
+      description: Product design
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
   - path: product/sheem.jpg
     meta:
       title: Sheem Product
       description: Product design rendering
       collections:
         - product
-    exif: {}
-  - path: product/perfume2.jpg
+    exif:
+      shutterSpeed: .nan
+  - path: product/creamtube2.jpg
     meta:
-      title: Perfume
+      title: Cream Tube 2
       description: Product design
       collections:
         - product
@@ -75,91 +122,104 @@ images:
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/dayiet1.jpg
     meta:
       title: Dayiet
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/apple.jpg
     meta:
       title: Apple
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/chimhyang.jpg
     meta:
       title: Chimhyang
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/drip.jpg
     meta:
       title: Drip Coffee
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/LemonSherbet.jpg
     meta:
       title: Lemon Sherbet
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/ginseng.jpg
     meta:
       title: Ginseng
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/lipbalm.jpg
     meta:
       title: Lip Balm
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/pineappleLemon.jpg
     meta:
       title: Pineapple Lemon
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/HotPack.jpg
     meta:
       title: Hot Pack
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/cereal.jpg
     meta:
       title: Cereal
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/foot1.jpg
     meta:
       title: Foot Care
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/Botanicure.jpg
     meta:
       title: Botanicure
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/bellafood.jpg
     meta:
       title: Bella Food
@@ -180,42 +240,48 @@ images:
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/grapefruitSpray.jpg
     meta:
       title: Grapefruit Spray
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/plain3.jpg
     meta:
       title: Plain
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/CleansingOil-2.jpg
     meta:
       title: Cleansing Oil
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/Hyaluronic-1.jpeg
     meta:
       title: Hyaluronic
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/byeori.jpg
     meta:
       title: Byeori
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/yulbaekgo.jpg
     meta:
       title: Yulbaekgo
@@ -229,63 +295,72 @@ images:
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/mask2.jpg
     meta:
       title: Mask
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/mia.jpg
     meta:
       title: Mia
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/olive1.jpg
     meta:
       title: Olive
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/olive2.jpg
     meta:
       title: Olive 2
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/tripleBalance.jpg
     meta:
       title: Triple Balance
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/grey.jpg
     meta:
       title: Grey
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/theSera.jpg
     meta:
       title: The Sera
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/sand3.jpg
     meta:
       title: Sand 3
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/lippie2.jpg
     meta:
       title: Lippie 2
@@ -299,7 +374,8 @@ images:
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/lippie1.jpg
     meta:
       title: Lippie 1
@@ -313,11 +389,161 @@ images:
       description: Product design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/alphaglow.jpg
     meta:
       title: Alphaglow
       description: Product design
       collections:
         - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/cushion.jpg
+    meta:
+      title: Cushion
+      description: Product design
+      collections:
+        - product
     exif: {}
+
+  - path: product/teaStorySmalll.jpg
+    meta:
+      title: Tea Story
+      description: Product design
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/creamtube1-1.jpg
+    meta:
+      title: Cream Tube
+      description: Product design
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: featured/bellafood.jpg
+    meta:
+      title: Bellafood
+      description: ''
+      collections:
+        - featured
+    exif: {}
+  - path: featured/can.png
+    meta:
+      title: Can
+      description: ''
+      collections:
+        - featured
+    exif:
+      shutterSpeed: .nan
+  - path: featured/lemon2.jpg
+    meta:
+      title: Lemon2
+      description: ''
+      collections:
+        - featured
+    exif:
+      shutterSpeed: .nan
+  - path: nature/L1002174.jpg
+    meta:
+      title: L1002174
+      description: ''
+      collections:
+        - nature
+    exif:
+      captureDate: 2025-03-27T10:35:21.000Z
+      fNumber: 8
+      focalLength: 28
+      iso: 100
+      model: LEICA Q3
+      shutterSpeed: 1250
+      lensModel: SUMMILUX 1:1.7/28 ASPH.
+  - path: nature/nature-1.jpg
+    meta:
+      title: Nature 1
+      description: ''
+      collections:
+        - nature
+    exif: {}
+  - path: nature/nature-10.jpg
+    meta:
+      title: Nature 10
+      description: ''
+      collections:
+        - nature
+    exif: {}
+  - path: nature/nature-2.jpg
+    meta:
+      title: Nature 2
+      description: ''
+      collections:
+        - nature
+    exif: {}
+  - path: nature/nature-3.jpg
+    meta:
+      title: Nature 3
+      description: ''
+      collections:
+        - nature
+    exif: {}
+  - path: nature/nature-5.jpg
+    meta:
+      title: Nature 5
+      description: ''
+      collections:
+        - nature
+    exif: {}
+  - path: nature/nature-7.jpg
+    meta:
+      title: Nature 7
+      description: ''
+      collections:
+        - nature
+    exif: {}
+  - path: nature/nature-8.jpg
+    meta:
+      title: Nature 8
+      description: ''
+      collections:
+        - nature
+    exif: {}
+  - path: street/stree-1.jpg
+    meta:
+      title: Stree 1
+      description: ''
+      collections:
+        - street
+    exif: {}
+  - path: travel/travel-1.jpg
+    meta:
+      title: Travel 1
+      description: ''
+      collections:
+        - travel
+    exif: {}
+  - path: whatWeDo/W1.png
+    meta:
+      title: W1
+      description: ''
+      collections:
+        - whatWeDo
+    exif:
+      shutterSpeed: .nan
+  - path: whatWeDo/W2.jpg
+    meta:
+      title: W2
+      description: ''
+      collections:
+        - whatWeDo
+    exif:
+      shutterSpeed: .nan
+  - path: whatWeDo/W3.jpg
+    meta:
+      title: W3
+      description: ''
+      collections:
+        - whatWeDo
+    exif:
+      shutterSpeed: .nan
