@@ -45,6 +45,16 @@ images:
         - product
     exif:
       shutterSpeed: .nan
+
+  - path: product/lab2.jpg
+    meta:
+      title: Lab Product
+      description: 3D product design rendering
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+
   - path: product/lemon2.jpg
     meta:
       title: Lemon Product
@@ -53,23 +63,23 @@ images:
         - product
     exif:
       shutterSpeed: .nan
-  - path: product/perfume3.jpg
+  - path: product/gold1.jpg
     meta:
-      title: Perfume Bottle
-      description: Elegant perfume bottle design
-      collections:
-        - product
-    exif:
-      captureDate: 2025-08-12T10:41:08.000Z
-      shutterSpeed: .nan
-  - path: product/shampoo.jpg
-    meta:
-      title: Shampoo
+      title: Gold
       description: Product design
       collections:
         - product
     exif:
       shutterSpeed: .nan
+  - path: product/lipstick2.jpg
+    meta:
+      title: Lipstick 2
+      description: Product design
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+
   - path: product/lipstick2-1.jpg
     meta:
       title: Lipstick 2-1
@@ -84,18 +94,20 @@ images:
       description: Product design
       collections:
         - product
-    exif: {}
-  - path: product/gold1.jpg
+    exif: 
+      shutterSpeed: .nan
+  - path: product/perfume3.jpg
     meta:
-      title: Gold
-      description: Product design
+      title: Perfume Bottle
+      description: Elegant perfume bottle design
       collections:
         - product
     exif:
+      captureDate: 2025-08-12T10:41:08.000Z
       shutterSpeed: .nan
-  - path: product/lipstick2.jpg
+  - path: product/Cheong.jpg
     meta:
-      title: Lipstick 2
+      title: Cheonggisoo
       description: Product design
       collections:
         - product
@@ -115,7 +127,33 @@ images:
       description: Product design
       collections:
         - product
-    exif: {}
+    exif: 
+      shutterSpeed: .nan
+  - path: product/solist1.jpg
+    meta:
+      title: Cream Tube 2
+      description: Product design
+      collections:
+        - product
+    exif: 
+      shutterSpeed: .nan
+  - path: product/BC2.jpg
+    meta:
+      title: BC2
+      description: Product design
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/BC4.jpg
+    meta:
+      title: BC4
+      description: Product design
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+
   - path: product/serum1.jpg
     meta:
       title: Serum
@@ -127,6 +165,15 @@ images:
   - path: product/dayiet1.jpg
     meta:
       title: Dayiet
+      description: Product design
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+
+  - path: product/shampoo.jpg
+    meta:
+      title: Shampoo
       description: Product design
       collections:
         - product
