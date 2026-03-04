@@ -101,6 +101,57 @@ images:
     exif:
       captureDate: 2025-08-12T10:41:08.000Z
       shutterSpeed: .nan
+  - path: product/smoothieall.jpg
+    meta:
+      title: Smoothieall
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/orzo1.jpg
+    meta:
+      title: Orzo1
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/orzo2.jpg
+    meta:
+      title: Orzo2
+      description: ''
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/glassSkin.jpg
+    meta:
+      title: Glassskin
+      description: ''
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/smoothiegreen.jpg
+    meta:
+      title: Smoothiegreen
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/smoothiepurple.jpg
+    meta:
+      title: Smoothiepurple
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/retinal.jpg
+    meta:
+      title: Retinal
+      description: ''
+      collections:
+        - product
+    exif: {}
   - path: product/Cheong.jpg
     meta:
       title: Cheonggisoo
@@ -228,6 +279,13 @@ images:
         - product
     exif:
       shutterSpeed: .nan
+  - path: product/ginseno59.jpg
+    meta:
+      title: Ginseno59
+      description: ''
+      collections:
+        - product
+    exif: {}
   - path: product/HotPack.jpg
     meta:
       title: Hot Pack
@@ -650,21 +708,6 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/ginseno59.jpg
-    meta:
-      title: Ginseno59
-      description: ''
-      collections:
-        - product
-    exif: {}
-  - path: product/glassSkin.jpg
-    meta:
-      title: Glassskin
-      description: ''
-      collections:
-        - product
-    exif:
-      shutterSpeed: .nan
   - path: product/keyring.jpg
     meta:
       title: Keyring
@@ -694,28 +737,6 @@ images:
       collections:
         - product
     exif: {}
-  - path: product/orzo1.jpg
-    meta:
-      title: Orzo1
-      description: ''
-      collections:
-        - product
-    exif: {}
-  - path: product/orzo2.jpg
-    meta:
-      title: Orzo2
-      description: ''
-      collections:
-        - product
-    exif:
-      shutterSpeed: .nan
-  - path: product/retinal.jpg
-    meta:
-      title: Retinal
-      description: ''
-      collections:
-        - product
-    exif: {}
   - path: product/slimtissue.jpg
     meta:
       title: Slimtissue
@@ -724,27 +745,6 @@ images:
         - product
     exif:
       shutterSpeed: .nan
-  - path: product/smoothieall.jpg
-    meta:
-      title: Smoothieall
-      description: ''
-      collections:
-        - product
-    exif: {}
-  - path: product/smoothiegreen.jpg
-    meta:
-      title: Smoothiegreen
-      description: ''
-      collections:
-        - product
-    exif: {}
-  - path: product/smoothiepurple.jpg
-    meta:
-      title: Smoothiepurple
-      description: ''
-      collections:
-        - product
-    exif: {}
   - path: product/vitamine1.jpg
     meta:
       title: Vitamine1
