@@ -45,7 +45,6 @@ images:
         - product
     exif:
       shutterSpeed: .nan
-
   - path: product/lab2.jpg
     meta:
       title: Lab Product
@@ -54,7 +53,6 @@ images:
         - product
     exif:
       shutterSpeed: .nan
-
   - path: product/lemon2.jpg
     meta:
       title: Lemon Product
@@ -79,7 +77,6 @@ images:
         - product
     exif:
       shutterSpeed: .nan
-
   - path: product/lipstick2-1.jpg
     meta:
       title: Lipstick 2-1
@@ -94,8 +91,7 @@ images:
       description: Product design
       collections:
         - product
-    exif: 
-      shutterSpeed: .nan
+    exif: {}
   - path: product/perfume3.jpg
     meta:
       title: Perfume Bottle
@@ -127,15 +123,14 @@ images:
       description: Product design
       collections:
         - product
-    exif: 
-      shutterSpeed: .nan
+    exif: {}
   - path: product/solist1.jpg
     meta:
       title: Cream Tube 2
       description: Product design
       collections:
         - product
-    exif: 
+    exif:
       shutterSpeed: .nan
   - path: product/BC2.jpg
     meta:
@@ -153,7 +148,6 @@ images:
         - product
     exif:
       shutterSpeed: .nan
-
   - path: product/serum1.jpg
     meta:
       title: Serum
@@ -170,7 +164,6 @@ images:
         - product
     exif:
       shutterSpeed: .nan
-
   - path: product/shampoo.jpg
     meta:
       title: Shampoo
@@ -273,7 +266,8 @@ images:
       description: Food product packaging design
       collections:
         - product
-    exif: {}
+    exif:
+      shutterSpeed: .nan
   - path: product/shampoo2.jpg
     meta:
       title: Shampoo 2
@@ -453,7 +447,6 @@ images:
       collections:
         - product
     exif: {}
-
   - path: product/teaStorySmalll.jpg
     meta:
       title: Tea Story
@@ -594,3 +587,168 @@ images:
         - whatWeDo
     exif:
       shutterSpeed: .nan
+  - path: product/AlboominPouch.jpg
+    meta:
+      title: Alboominpouch
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/AlboominTablet1.jpg
+    meta:
+      title: Alboomintablet1
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/AlboominTablet2.jpg
+    meta:
+      title: Alboomintablet2
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/LashElixir.jpg
+    meta:
+      title: Lashelixir
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/METABIOBLUE2.jpg
+    meta:
+      title: Metabioblue2
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/METABIORED2.jpg
+    meta:
+      title: Metabiored2
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/draram.jpg
+    meta:
+      title: Draram
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/ginseng1.jpg
+    meta:
+      title: Ginseng1
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/ginseng2.jpg
+    meta:
+      title: Ginseng2
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/ginseno59.jpg
+    meta:
+      title: Ginseno59
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/glassSkin.jpg
+    meta:
+      title: Glassskin
+      description: ''
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/keyring.jpg
+    meta:
+      title: Keyring
+      description: ''
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/olivery1.jpg
+    meta:
+      title: Olivery1
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/olivery2.jpg
+    meta:
+      title: Olivery2
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/olivery3.jpg
+    meta:
+      title: Olivery3
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/orzo1.jpg
+    meta:
+      title: Orzo1
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/orzo2.jpg
+    meta:
+      title: Orzo2
+      description: ''
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/retinal.jpg
+    meta:
+      title: Retinal
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/slimtissue.jpg
+    meta:
+      title: Slimtissue
+      description: ''
+      collections:
+        - product
+    exif:
+      shutterSpeed: .nan
+  - path: product/smoothieall.jpg
+    meta:
+      title: Smoothieall
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/smoothiegreen.jpg
+    meta:
+      title: Smoothiegreen
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/smoothiepurple.jpg
+    meta:
+      title: Smoothiepurple
+      description: ''
+      collections:
+        - product
+    exif: {}
+  - path: product/vitamine1.jpg
+    meta:
+      title: Vitamine1
+      description: ''
+      collections:
+        - product
+    exif: {}
